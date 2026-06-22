@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+  TestNG suite for the alert-handling project.
+
+  - <parameter> values are injected into the @Parameters method (beforeMethod) in the class.
+  - <groups><run><include> picks which @Test methods run, by their groups.
+      include "alert"  -> TC01, TC02
+      include "window" -> TC03
+    Together they run all three. To run a smaller set, include only "smoke" (= TC01).
+  - <classes><class> lists the test class, using its package-qualified name
+    "test.AlertHandlingTestng".
+
+  Run it: right-click this file in IntelliJ -> Run 'testng.xml'.
+-->
+<suite name="AlertHandlingSuite" verbose="1">
+
+    <!-- builds the ExtentReports HTML report (reports/ExtentReport.html) as tests run -->
+    <listeners>
+        <listener class-name="test.ExtentReportListener"/>
+    </listeners>
+
+    <!-- read by @Parameters({"Browser","URL"}) in beforeMethod -->
+    <parameter name="Browser" value="chrome"/>
+    <parameter name="URL"     value="https://mail.rediff.com/cgi-bin/login.cgi"/>
+
+    <test name="AlertAndWindowTests">
+        <groups>
+            <run>
+                <include name="alert"/>
+                <include name="window"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="test.AlertHandlingTestng"/>
+        </classes>
+    </test>
+
+</suite>

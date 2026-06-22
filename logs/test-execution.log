@@ -1,0 +1,52 @@
+2026-06-22 07:18:42.543 [INFO ] [AlertHandlingTestng] ########## STARTING TEST: TC01 (browser=chrome) ##########
+2026-06-22 07:18:42.549 [INFO ] [BaseTest] === BASE SETUP: Launching chrome browser ===
+2026-06-22 07:18:49.566 [INFO ] [BaseTest] chrome browser launched successfully.
+2026-06-22 07:18:49.566 [INFO ] [BaseTest] === BASE SETUP: Opening URL ===
+2026-06-22 07:18:57.665 [INFO ] [BaseTest] Navigated to URL: https://mail.rediff.com/cgi-bin/login.cgi
+2026-06-22 07:18:57.763 [INFO ] [AlertHandlingTestng] Clicking Sign In with empty fields
+2026-06-22 07:18:58.390 [INFO ] [LoginPage] Clicked 'Sign In' button with all fields left empty — expecting an alert.
+2026-06-22 07:19:01.601 [INFO ] [ExcelUtils] Total rows found in sheet (including header): 3
+2026-06-22 07:19:01.643 [INFO ] [ExcelUtils] Found expected message for test case 'EmptySignIn': Please enter a valid user name
+2026-06-22 07:19:01.701 [INFO ] [AlertUtils] Alert text fetched: Please enter a valid user name
+2026-06-22 07:19:01.701 [INFO ] [AlertUtils] PASS - Alert message matched.
+2026-06-22 07:19:01.701 [INFO ] [AlertUtils]   Expected : Please enter a valid user name
+2026-06-22 07:19:01.701 [INFO ] [AlertUtils]   Actual   : Please enter a valid user name
+2026-06-22 07:19:01.766 [INFO ] [AlertUtils] Alert accepted (OK button clicked).
+2026-06-22 07:19:01.813 [INFO ] [BaseTest] === BASE TEARDOWN: Closing browser ===
+2026-06-22 07:19:07.381 [INFO ] [BaseTest] Browser closed and session ended.
+2026-06-22 07:19:07.385 [INFO ] [AlertHandlingTestng] ########## STARTING TEST: TC02 (browser=chrome) ##########
+2026-06-22 07:19:07.385 [INFO ] [BaseTest] === BASE SETUP: Launching chrome browser ===
+2026-06-22 07:19:12.386 [INFO ] [BaseTest] chrome browser launched successfully.
+2026-06-22 07:19:12.386 [INFO ] [BaseTest] === BASE SETUP: Opening URL ===
+2026-06-22 07:19:22.485 [INFO ] [BaseTest] Navigated to URL: https://mail.rediff.com/cgi-bin/login.cgi
+2026-06-22 07:19:22.499 [INFO ] [AlertHandlingTestng] Clicking Forgot Password link
+2026-06-22 07:19:23.868 [INFO ] [LoginPage] Clicked 'Forgot Password' link.
+2026-06-22 07:19:23.868 [INFO ] [AlertHandlingTestng] Clicking Next with empty fields
+2026-06-22 07:19:24.233 [INFO ] [ForgotPasswordPage] Clicked 'Next' button on Forgot Password page with all fields empty — expecting an alert.
+2026-06-22 07:19:24.343 [INFO ] [ExcelUtils] Total rows found in sheet (including header): 3
+2026-06-22 07:19:24.343 [INFO ] [ExcelUtils] Found expected message for test case 'ForgotPassword': Please enter your email ID
+2026-06-22 07:19:24.386 [INFO ] [AlertUtils] Alert text fetched: Please enter your email ID
+2026-06-22 07:19:24.386 [INFO ] [AlertUtils] PASS - Alert message matched.
+2026-06-22 07:19:24.386 [INFO ] [AlertUtils]   Expected : Please enter your email ID
+2026-06-22 07:19:24.386 [INFO ] [AlertUtils]   Actual   : Please enter your email ID
+2026-06-22 07:19:24.423 [INFO ] [AlertUtils] Alert accepted (OK button clicked).
+2026-06-22 07:19:24.428 [INFO ] [BaseTest] === BASE TEARDOWN: Closing browser ===
+2026-06-22 07:19:29.341 [INFO ] [BaseTest] Browser closed and session ended.
+2026-06-22 07:19:29.344 [INFO ] [AlertHandlingTestng] ########## STARTING TEST: TC03 (browser=chrome) ##########
+2026-06-22 07:19:29.345 [INFO ] [BaseTest] === BASE SETUP: Launching chrome browser ===
+2026-06-22 07:19:34.549 [INFO ] [BaseTest] chrome browser launched successfully.
+2026-06-22 07:19:34.555 [INFO ] [BaseTest] === BASE SETUP: Opening URL ===
+2026-06-22 07:20:58.470 [INFO ] [BaseTest] Navigated to URL: https://mail.rediff.com/cgi-bin/login.cgi
+2026-06-22 07:20:58.470 [INFO ] [AlertHandlingTestng] Saving current (parent) window handle
+2026-06-22 07:20:58.494 [INFO ] [WindowUtils] Current (parent) window handle saved: A450E52F59A5B7DCFE20DE29B03891F5
+2026-06-22 07:20:58.494 [INFO ] [AlertHandlingTestng] Clicking Privacy Policy link
+2026-06-22 07:20:58.778 [INFO ] [LoginPage] Clicked 'Privacy Policy' link via JavaScript.
+2026-06-22 07:20:58.778 [INFO ] [AlertHandlingTestng] Switching to new tab
+2026-06-22 07:20:59.428 [INFO ] [WindowUtils] Switched to new tab. Page title: Rediff: Welcome to rediff.com
+2026-06-22 07:20:59.609 [INFO ] [WindowUtils] PASS - Page body contains expected text: 'Privacy Policy'
+2026-06-22 07:20:59.643 [INFO ] [WindowUtils]   Page title: Rediff: Welcome to rediff.com
+2026-06-22 07:20:59.643 [INFO ] [AlertHandlingTestng] Closing new tab and returning to parent tab
+2026-06-22 07:20:59.690 [INFO ] [WindowUtils] Closing current tab: Rediff: Welcome to rediff.com
+2026-06-22 07:20:59.906 [INFO ] [WindowUtils] Switched back to parent tab. Current page: Rediffmail - Free Email for Login with Secure Access
+2026-06-22 07:20:59.923 [INFO ] [BaseTest] === BASE TEARDOWN: Closing browser ===
+2026-06-22 07:21:05.764 [INFO ] [BaseTest] Browser closed and session ended.
