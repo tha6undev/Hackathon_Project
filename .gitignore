@@ -37,3 +37,8 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Generated test artifacts (regenerated on every run) ###
+logs/
+reports/
+test-output/
