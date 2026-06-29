@@ -11,10 +11,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.time.Duration;
 
-/**
- * Page object for the Rediff login page (https://mail.rediff.com/cgi-bin/login.cgi).
- * Holds all locators and actions — test classes don't call findElement() directly.
- */
+
 public class LoginPage {
 
     private static final Logger log = LogManager.getLogger(LoginPage.class);
@@ -35,9 +32,7 @@ public class LoginPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS));
     }
 
-    /**
-     * Clicks Sign In without filling in any fields — triggers the validation alert (Test Case 1).
-     */
+
     public void clickSignInButtonWithEmptyFields() {
 
         WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(signInSubmitButton));
@@ -45,9 +40,7 @@ public class LoginPage {
         log.info("Clicked 'Sign In' button with all fields left empty — expecting an alert.");
     }
 
-    /**
-     * Clicks the Forgot Password link to navigate to that flow.
-     */
+
     public void clickForgotPasswordLink() {
 
         WebElement forgotLink = wait.until(ExpectedConditions.elementToBeClickable(forgotPasswordLink));
@@ -55,10 +48,7 @@ public class LoginPage {
         log.info("Clicked 'Forgot Password' link.");
     }
 
-    /**
-     * Clicks the Privacy Policy link at the bottom of the page.
-     * Opens in a new tab — save the current window handle before calling this.
-     */
+
     public void clickPrivacyPolicyLink() {
 
         // link sits below the fold and is overlapped by a footer/banner, so a native click

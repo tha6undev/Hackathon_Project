@@ -10,10 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.time.Duration;
 
-/**
- * Page object for the Rediff "Forgot Password" page.
- * Navigated to from the login form via the Forgot Password link.
- */
+
 public class ForgotPasswordPage {
 
     private static final Logger log = LogManager.getLogger(ForgotPasswordPage.class);
@@ -31,18 +28,12 @@ public class ForgotPasswordPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS));
     }
 
-    /**
-     * Clicks Next without filling anything in — triggers the validation alert (Test Case 2).
-     */
+
     public void clickNextButtonWithEmptyFields() {
 
         WebElement next = wait.until(ExpectedConditions.elementToBeClickable(nextButton));
         next.click();
         log.info("Clicked 'Next' button on Forgot Password page with all fields empty — expecting an alert.");
     }
-
-    /**
-
-     */
 
 }

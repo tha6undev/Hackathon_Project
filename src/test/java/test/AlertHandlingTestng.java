@@ -18,21 +18,7 @@ import utils.WindowUtils;
 
 import java.lang.reflect.Method;
 
-/**
- * TestNG version of the alert-handling suite. Runs three independent tests against rediff.com:
- *   TC01 - empty sign-in alert        (groups: alert, smoke)
- *   TC02 - forgot password alert      (groups: alert, regression)
- *   TC03 - privacy policy new tab     (groups: window, regression)
- *
- * How TestNG drives this class:
- *   @BeforeMethod runs before EVERY @Test  -> launches a fresh browser + opens the URL
- *   @Test         is one test case          -> TestNG marks it pass/fail from the assertions
- *   @AfterMethod  runs after EVERY @Test    -> closes the browser
- * Because the browser is fresh per test, the three tests are independent and order doesn't matter.
- *
- * Extends BaseTest (owns the browser lifecycle). Lives in src/test in the default package,
- * importing the pages/utils packages from src/main/java.
- */
+
 public class AlertHandlingTestng extends BaseTest {
 
     private static final Logger log = LogManager.getLogger(AlertHandlingTestng.class);
@@ -52,11 +38,7 @@ public class AlertHandlingTestng extends BaseTest {
     private final WindowUtils windowUtils = new WindowUtils();
     private final ExcelUtils  excelUtils  = new ExcelUtils();
 
-    /**
-     * Runs before each @Test. Reads Browser and URL from testng.xml (@Parameters),
-     * logs which test is starting (read from the @Test's testName via reflection),
-     * then launches the browser and opens the URL through BaseTest.
-     */
+
     @Parameters({"Browser", "URL"})
     @BeforeMethod(alwaysRun = true)
     public void beforeMethod(Method method, String browser, String url) {
@@ -69,9 +51,7 @@ public class AlertHandlingTestng extends BaseTest {
         setUp(browser, url);
     }
 
-    /**
-     * TC01 — clicking Sign In with empty fields must raise the expected validation alert.
-     */
+
     @Test(testName = "TC01", groups = {"alert", "smoke"})
     public void emptySignInAlert() {
 
@@ -90,9 +70,7 @@ public class AlertHandlingTestng extends BaseTest {
         Assert.assertTrue(matched, "Empty sign-in alert text did not match the expected message.");
     }
 
-    /**
-     * TC02 — on the Forgot Password page, clicking Next with empty fields must raise the expected alert.
-     */
+
     @Test(testName = "TC02", groups = {"alert", "regression"})
     public void forgotPasswordAlert() {
 
@@ -114,9 +92,7 @@ public class AlertHandlingTestng extends BaseTest {
         Assert.assertTrue(matched, "Forgot-password alert text did not match the expected message.");
     }
 
-    /**
-     * TC03 — the Privacy Policy link must open the policy page in a new tab.
-     */
+
     @Test(testName = "TC03", groups = {"window", "regression"})
     public void privacyPolicyNewTab() {
 
@@ -139,9 +115,7 @@ public class AlertHandlingTestng extends BaseTest {
         Assert.assertTrue(onPolicyPage, "Privacy Policy page was not displayed in the new tab.");
     }
 
-    /**
-     * Runs after each @Test — always closes the browser, even if the test failed.
-     */
+
     @AfterMethod(alwaysRun = true)
     public void afterMethod() {
         tearDown();

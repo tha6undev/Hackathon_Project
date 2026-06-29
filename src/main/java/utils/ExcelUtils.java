@@ -11,11 +11,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-/**
- * Reads expected alert messages from the AlertData sheet in the project's Excel file.
- * Expected sheet layout: Column A = test case name, Column B = expected message, row 0 = headers.
- * Keeping test data in Excel means expected values can be updated without touching code.
- */
+
 public class ExcelUtils {
 
     private static final Logger log = LogManager.getLogger(ExcelUtils.class);
@@ -24,13 +20,7 @@ public class ExcelUtils {
     private static final int COLUMN_EXPECTED_MESSAGE = 1;
     private static final int HEADER_ROW_INDEX        = 0;
 
-    /**
-     * Scans Column A for a row matching testCaseName and returns Column B of that row.
-     *
-     * @param filePath     full path to the .xlsx file
-     * @param testCaseName name to match in Column A (must match exactly, case-insensitive)
-     * @return the expected message string, or empty string if the test case isn't found
-     */
+
     public String getExpectedAlertMessage(String filePath, String testCaseName) {
 
         String expectedMessage = "";
