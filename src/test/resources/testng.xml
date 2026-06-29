@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite Name">
+    <!-- Parameters for Browser and URL -->
+    <parameter name="Browser" value="CHROME"/>
+    <parameter name="URL" value="https://mail.rediff.com/cgi-bin/login.cgi"/>
+    <parameter name="Title" value="Rediff"/>
+    <listeners>
+        <listener class-name="base.ExtentReportManager"/>
+    </listeners>
+
+    <test name="StepByStepTest" preserve-order="true">
+        <groups>
+            <run>
+                <include name="regression"/>
+                <include name="sanity"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="test.CreateAccountTest_TestNG"/>
+        </classes>
+    </test>
+
+</suite>
